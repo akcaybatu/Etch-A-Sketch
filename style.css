@@ -1,0 +1,11 @@
+.gridRow {
+    display: flex;
+}
+
+.cell {
+    background-color: rgb(181, 187, 190);
+    border: 1px solid gray;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block;     
+}
