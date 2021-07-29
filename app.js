@@ -1,25 +1,32 @@
-// Sets important constants and variables
-
 const container = document.getElementById("container");
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
+let clear = document.getElementById("clearer");
 
 window.addEventListener("load", defaultGrid);
 
-function defaultGrid() {
-    makeRows(16);
-    makeColumns(16);
-    let myCell = document.getElementsByClassName("cell");
-    for (let index = 0; index < myCell.length; index++) {
-        const element = myCell[index];
-        element.addEventListener('mousemove', runEvent);    
-    }
+function defaultGrid() {  
+    let rangeCell = document.getElementById("rangeCell");
     
+    rangeCell.addEventListener("change", changeCell => {
+        container.innerHTML = "";
+        makeRows(changeCell.target.value);
+        makeColumns(changeCell.target.value);
+        let myCell = document.getElementsByClassName("cell");
+        for (let index = 0; index < myCell.length; index++) {
+            const element = myCell[index];
+            element.addEventListener('mousemove', runEvent);    
+        }
+    }) 
+    rangeCell.dispatchEvent(new window.Event('change'));
 }
 
 function runEvent(e){
-    console.log("Hello MF");
-    e.currentTarget.style.backgroundColor = "rgb(255, 7, 3)";
+    let rnd1 = Math.floor(Math.random() * 255);
+    let rnd2 = Math.floor(Math.random() * 255);
+    let rnd3 = Math.floor(Math.random() * 255);
+
+    e.currentTarget.style.backgroundColor = `rgb(${rnd1}, ${rnd2}, ${rnd3})`;
 }
 
 function makeRows(rowNum) {
@@ -37,3 +44,10 @@ function makeColumns(cellNum) {
         }
     }
 }
+
+clear.onclick = function clearTable(){
+    var cells = document.getElementsByClassName("cell");
+    for (var index = 0; index < cells.length; index++) {
+        cells[index].style.backgroundColor = "white";
+    }
+};
