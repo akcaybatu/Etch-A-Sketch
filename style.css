@@ -1,11 +1,15 @@
+#container{
+    width: 400px;
+    height: 400px;   
+    border: 2px solid rgb(50, 124, 184);
+    margin: auto;
+}
+
 .gridRow {
-    display: flex;
+    display: flex;    
 }
 
 .cell {
-    background-color: "#white";
-    border: 1px solid grey;
-    min-width: 10px;
-    min-height: 10px;
-    display: inline-block;     
+    background-color: "#white";    
+    display: inline-block;    
 }
