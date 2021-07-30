@@ -5,15 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Etch A Sketch</title>
 </head>
 <body>
-    <div id="buttons">
+    <div id="main">
+        <p>Etch A Sketch</p>
+        <div id="buttons">
+            <input type="color">
+            <label for="">Size</label>
+            <input id="rangeCell" type="range" name="cellRange" min="1" max="64" value="16">
+            <button>Eraser</button>
+        </div>
+        <div id="container">
+        </div>
         <button id="clearer">Clear</button>
-        <input id="rangeCell" type="range" name="cellRange" min="1" max="64" value="16">
-    </div>
-    <div id="container">
-    </div>
+    </div>    
     <script src="app.js"></script>
 </body>
 </html>

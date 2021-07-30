@@ -15,7 +15,7 @@ function defaultGrid() {
         let myCell = document.getElementsByClassName("cell");
         for (let index = 0; index < myCell.length; index++) {
             const element = myCell[index];
-            element.addEventListener('mousemove', runEvent);    
+            element.addEventListener('mouseover', runEvent);     
         }
     }) 
     rangeCell.dispatchEvent(new window.Event('change'));
